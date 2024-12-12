@@ -1,35 +1,40 @@
-*{
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-  
 }
-.container{
+
+.container {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg,#153677, #4e085f);
-    padding: 10px;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 2em;
 }
-.todo-app{
-width:100%;
-max-width: 540px;
-background: #fff;
-margin: 100px auto 20px;
-padding: 40px 30px 70px;
-border-radius: 10px;
+
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 40px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
 }
-.todo-app h2{
-    color:#002765;
-    display:flex;
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
     align-items: center;
     margin-bottom: 20px;
+    font-size: 1.8rem;
 }
-.todo-app h2 img{
+
+.todo-app h2 img {
     width: 30px;
     margin-left: 10px;
-    }
-.row{
+}
+
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,81 +43,185 @@ border-radius: 10px;
     padding-left: 20px;
     margin-bottom: 25px;
 }
-input{
+
+input {
+    width: 60%;
     flex: 1;
     border: none;
     outline: none;
-    background:transparent;
-    padding:10px;
+    background: transparent;
+    padding: 10px;
+    font-size: 1rem;
 }
-button#addTask{
+
+button#addTask {
     border: none;
-    outline:none;
-    padding:16px 50px;
+    outline: none;
+    padding: 16px 50px;
     background: #ff5945;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 40px;
+    transition: background 0.3s;
 }
-li{
+
+button#addTask:hover {
+    background: #e04d3d;
+}
+.editBtn{
+    margin-left: 10px;
+    border:none;
+    outline: none;
+    padding: 5px 8px;
+    background: rgb(4, 177, 4);
+    font-size: 0.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s;
+    color: aliceblue;
+}
+li {
     list-style: none;
-    font-size:17px;
+    font-size: 1rem;
     padding: 12px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
 }
-ul li::before{
-content: '';
-position:absolute;
-height: 28px;
-width: 28px;
-border-radius: 50%;
-background-image: url(images/unchecked.png);
-background-size: cover;
-background-position: center;
-top: 12px;
-left: 8px;
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
 }
-ul li.checked{
+
+ul li.checked {
     color: #555;
     text-decoration: line-through;
 }
-ul li.checked::before{
-background-image: url(images/checked.png);
+
+ul li.checked::before {
+    background-image: url(images/checked.png);
 }
-ul li span{
+
+ul li span {
     position: absolute;
     right: 0;
     top: 5px;
     width: 40px;
     height: 40px;
-    font-size: #555;
+    font-size: 1.2rem;
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
 }
-ul li span:hover{
+
+ul li span:hover {
     background: #edeef0;
 }
-#clear{
+
+#clear {
     margin-top: 20px;
     border: none;
-    outline:none;
-    padding:10px 30px;
+    outline: none;
+    padding: 10px 30px;
     background: #ff5945;
     color: #fff;
-    font-size: 10px;
+    font-size: 0.9rem;
     cursor: pointer;
     border-radius: 40px;
+    transition: background 0.3s;
 }
 
-
+#clear:hover {
+    background: #e04d3d;
+}
 
 
 @media (max-width: 768px) {
     .todo-app {
         max-width: 90%;
+        padding: 30px 20px 50px;
+    }
+
+    .todo-app h2 {
+        font-size: 1.5rem;
+    }
+
+    button#addTask {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+        padding: 10px 8px 10px 40px;
+    }
+
+    ul li::before {
+        height: 24px;
+        width: 24px;
+        top: 10px;
+        left: 5px;
+    }
+
+    ul li span {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 1rem;
+    }
+
+    #clear {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-app {
+        padding: 20px 15px 40px;
+    }
+
+    .todo-app h2 {
+        font-size: 1.2rem;
+    }
+
+    button#addTask {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    li {
+        font-size: 0.8rem;
+        padding: 8px 8px 8px 35px;
+    }
+
+    ul li::before {
+        height: 20px;
+        width: 20px;
+        top: 8px;
+        left: 5px;
+    }
+
+    ul li span {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 0.9rem;
+    }
+
+    #clear {
+        padding: 6px 15px;
+        font-size: 0.7rem;
     }
 }
